@@ -1,4 +1,6 @@
-use aggregator::{Summary, Tweet};
+use traits::{Summary, Tweet};
+use std::fmt::Debug;
+use std::fmt::Display;
 
 fn main() {
     let tweet = Tweet {
@@ -15,9 +17,9 @@ fn main() {
 
 
 // traits como parametros
-pub fn notify(item: &impl Summary) {
+/* pub fn notify(item: &impl Summary) {
     println!("Breaking news! {}", item.summarize());
-}
+} */
 
 // trait bound
 pub fn notify<T: Summary>(item: &T) {
@@ -29,7 +31,10 @@ fn some_function<T, U>(t: &T, u: &U) -> i32
 where
     T: Display + Clone,
     U: Clone + Debug,
-{}
+{
+    let x = 5;
+    x
+}
 
 // traits como valor de retorno
 fn returns_summarizable() -> impl Summary {

@@ -5,13 +5,13 @@ fn main() {
 }
 
 //genericos en structs
-struct Point<T> {
+struct Point<T,U> {
     x: T,
-    y: T,
+    y: U,
 }
 
 // genericos en métodos
-impl<T> Point<T> {
+impl<T,U> Point<T,U> {
     fn x(&self) -> &T {
         &self.x
     }

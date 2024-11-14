@@ -9,13 +9,6 @@ fn main() {
         _ => reroll(),
     }
 
-    // if let
-    let mut count = 0;
-    if let Coin::Quarter(state) = coin {
-        println!("State quarter from {state:?}!");
-    } else {
-        count += 1;
-    }
 }
 
 #[derive(Debug)] // so we can inspect the state in a minute
@@ -28,7 +21,7 @@ enum Coin {
     Penny,
     Nickel,
     Dime,
-    Quarter,
+    Quarter(UsState),
 }
 
 // match

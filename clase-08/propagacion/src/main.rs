@@ -1,5 +1,6 @@
 use std::fs::File;
 use std::io::{self, Read};
+use std::error::Error;
 
 fn main() -> Result<(), Box<dyn Error>> {
     let greeting_file = File::open("hello.txt")?;
